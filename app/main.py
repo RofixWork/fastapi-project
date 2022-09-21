@@ -9,7 +9,7 @@ from .routers import user, task
 from fastapi.middleware.cors import CORSMiddleware
 
 # Base.metadata.create_all(bind=engine)
-origins = ['https://c1h10r.csb.app']
+origins = ['*']
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,9 +24,7 @@ app.include_router(task.router)
 # user
 
 @app.get('/')
-def home(current_user = Depends(get_current_user)):
-    print(settings)
-    print(current_user.username)
+def home():
     return {
         'message':'Hello World'
     }
