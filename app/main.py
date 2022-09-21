@@ -9,7 +9,7 @@ from .routers import user, task
 from fastapi.middleware.cors import CORSMiddleware
 
 # Base.metadata.create_all(bind=engine)
-origins = ['*']
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
